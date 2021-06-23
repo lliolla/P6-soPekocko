@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 const saucesRoutes = require('./routes/sauce');//on importe le router des sauces
-//const userRoutes = require('./routes/user')
+const userRoutes = require('./routes/user') // on import le router des users
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.use(express.json());
 
 //app.use('/images', express.static(path.join(__dirname, 'images'))); // pourque app.js serve le dossier /images 
 app.use('/api/sauces', saucesRoutes);// pour le CRUD des sauces - se refer à ./routes/sauces.js
-//app.use('/api/auth', userRoutes);// pour l'authentification de l'utilisateur - se refer à ./routes/user.js
+app.use('/api/auth', userRoutes);// pour l'authentification de l'utilisateur - se refer à ./routes/user.js
 
   
 module.exports = app;// Export de l'application
