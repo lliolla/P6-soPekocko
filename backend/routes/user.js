@@ -8,4 +8,4 @@ const userCtrl = require('../controllers/user');
 router.post('/signup', userCtrl.signup);// pour envoyer les info (email + password) d'un nouvel utilisateur
 router.post('/login',userCtrl.login);// pour envoyer les informations d'un utilisateur déjà existan
 
-module.express = router;// on export le router
+module.exports = router;// on export le router

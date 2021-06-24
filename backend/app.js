@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 const saucesRoutes = require('./routes/sauce');//on importe le router des sauces
-const userRoutes = require('./routes/user') // on import le router des users
+const userRoutes = require('./routes/user'); // on importe le router des users
 
 const app = express();
 
