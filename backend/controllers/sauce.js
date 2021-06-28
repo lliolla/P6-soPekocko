@@ -1,4 +1,5 @@
 const Sauce = require('../models/sauce');
+const fs = require('fs');// donne acces aux differentes operations liees aux fichiers
 
 // Création d'une nouvelle sauce
 exports.createSauce = (req, res, next) => {
@@ -51,7 +52,7 @@ exports.getOneSauce = (req, res, next) => {
 };
 
  // Récupération de toutes les sauces
-exports.getAllSauces = (req, res, next) => {
+exports.getAllSauces = (req, res, next)=> {
     Sauce.find() // lit dans les différentes sauces dans la base de données
     .then(sauces => res.status(200).json(sauces)) // récupération du tableau des sauces
     .catch(error => res.status(400).json({ error }));

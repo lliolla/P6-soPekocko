@@ -21,6 +21,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');// et aussi sur certaines methodes
     next();// j'appelle next() pour passer au middleware d'apres
 });
+
 // remplace l'appel a bodyParser qui est déprecié
 app.use(express.json());
 
