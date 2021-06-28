@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const path = require('path');
 
 const saucesRoutes = require('./routes/sauce');//on importe le router des sauces
 const userRoutes = require('./routes/user'); // on importe le router des users
@@ -29,7 +29,7 @@ app.use(express.json());
 //app.use(helmet()); // helmet configure de manière appropriée des en-têtes HTTP, contient 9 fonctions middlewares
 
 
-//app.use('/images', express.static(path.join(__dirname, 'images'))); // pourque app.js serve le dossier /images 
+app.use('/images', express.static(path.join(__dirname, 'images'))); // pour que app.js serve le dossier /images 
 app.use('/api/sauces', saucesRoutes);// pour le CRUD des sauces - se refer à ./routes/sauces.js
 app.use('/api/auth', userRoutes);// pour l'authentification de l'utilisateur - se refer à ./routes/user.js
 
