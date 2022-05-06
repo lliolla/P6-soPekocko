@@ -7,12 +7,12 @@ const userRoutes = require('./routes/user'); // on importe le router des users
 
 const app = express();
 
-// Connexion à la base de données MongoDB
-mongoose.connect(' mongodb+srv://fanny:Kiwi260738@cluster0.rx01e.mongodb.net/cluster0?retryWrites=true&w=majority',
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
+ //Connexion à la base de données MongoDB
+ mongoose.connect('mongodb+srv://cluster0.kjvng.mongodb.net/myFirstDatabase',
+   { useNewUrlParser: true,
+     useUnifiedTopology: true })
+   .then(() => console.log('Connexion à MongoDB réussie !'))
+   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 // Eviter les erros CORS afin que tout le monde puisse faire des requêtes
 app.use((req, res, next) => {
