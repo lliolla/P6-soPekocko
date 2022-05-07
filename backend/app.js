@@ -2,13 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 
+
 const saucesRoutes = require('./routes/sauce');//on importe le router des sauces
 const userRoutes = require('./routes/user'); // on importe le router des users
 
 const app = express();
 
  //Connexion à la base de données MongoDB
- mongoose.connect('mongodb+srv://cluster0.kjvng.mongodb.net/myFirstDatabase',
+ mongoose.connect('mongodb+srv://LLIOLLA:Kiwi2607@cluster0.kjvng.mongodb.net/Cluster0?retryWrites=true&w=majority',
    { useNewUrlParser: true,
      useUnifiedTopology: true })
    .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -21,7 +22,6 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');// et aussi sur certaines methodes
     next();// j'appelle next() pour passer au middleware d'apres
 });
-
 // remplace l'appel a bodyParser qui est déprecié
 app.use(express.json());
 
